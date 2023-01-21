@@ -52,11 +52,6 @@
 
 ## Breve resumen
 
-
-
-
-# Introducción a Unix/Linux
-
 ## 1.- Comenzando
     
 ### A.- Entrar y Salir de la Cuenta
