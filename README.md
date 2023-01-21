@@ -1,15 +1,18 @@
-## Materiales usados en ARCOS.INF.UC3M.ES con Licencia [CC BY-NC 4.0](http://creativecommons.org/licenses/by-nc/4.0/) 
-
 # Introducción a Unix/Linux
+
+### Materiales usados en ARCOS.INF.UC3M.ES con Licencia [CC BY-NC 4.0](http://creativecommons.org/licenses/by-nc/4.0/) 
 
 ## Materiales
 
+* Transparencias y videos:
+
 <html>
+<ul>
 <div class="table-responsive">
-    <table class="table table-bordered table-sm table-hover" border="1">
+    <table class="table table-bordered table-sm table-hover" >
             <tr>
-                <th class="col-4" style="width:33vh;"><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/core/1614226998/f/pdf-24" class="iconlarge activityicon" alt="Icono PDF" role="presentation"> Transparencias</th>
-                <th class="col-4" style="width:33vh;"><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/url/1615523185/icon" class="iconlarge activityicon" alt="icono enlace" role="presentation"> Videos</th>
+                <th class="col-4" style="width:33vh;">Transparencias</th>
+                <th class="col-4" style="width:33vh;">Videos</th>
             </tr>
             <tr>
                 <td class="align-middle">
@@ -46,15 +49,19 @@
         </tbody>
     </table>
 </div>
+</ul>
 </html>
 
+* Enlaces adicionales:
+  * [Jaime Pons |- AprendoLinux](https://www.youtube.com/channel/UCaA0nwerdKCGE7F_doNWdGg)
+  * [www.aprendolinux.com](www.aprendolinux.com)
 
 
-## Breve resumen
+## Introducción a Unix/Linux
 
-## 1.- Comenzando
+### 1.- Comenzando
     
-### A.- Entrar y Salir de la Cuenta
+#### A.- Entrar y Salir de la Cuenta
 
 |  DOS   |  UNIX     |  VMS         | CMS/CP       |
 |--------|-----------|--------------|--------------|
@@ -85,8 +92,7 @@
    * También se sale con Control-D, solo en algunos shells.
 
 
-
-### B.- Información de recursos disponibles
+#### B.- Información de recursos disponibles
 
 |  DOS   |  UNIX     |  VMS         | CMS/CP       |
 |--------|-----------|--------------|--------------|
@@ -114,7 +120,7 @@ Filesystem usage quota limit timeleft  files quota limit timeleft
     * Lista el espacio que ocupa los fichero en el directorio actual y subdirectorios de este.
 
 
-### C.- Obtener ayuda
+#### C.- Obtener ayuda
 
 |  DOS   |  UNIX     |  VMS         | CMS/CP       |
 |--------|-----------|--------------|--------------|
@@ -137,10 +143,9 @@ Filesystem usage quota limit timeleft  files quota limit timeleft
         * ' '      ---> Siguiente pantalla.
 
 
-## 2.- Ejecución de comandos
-    
+### 2.- Ejecución de comandos
 
-### A.- Gestión de procesos
+#### A.- Gestión de procesos
 
 |  DOS   |  UNIX     |  VMS                | CMS/CP       |
 |--------|-----------|---------------------|--------------|
@@ -198,7 +203,6 @@ Filesystem usage quota limit timeleft  files quota limit timeleft
         *    jobs
         *    bg (orden de programa)
 
-
 * nohup &lt;programa&gt; &
      * Se ejecuta el programa en background y aunque te salgas de tu cuenta y apagues el terminal!.
       * Es usado cuando vamos a salirnos de la cuenta, por no poder
@@ -212,9 +216,9 @@ Filesystem usage quota limit timeleft  files quota limit timeleft
         ( para ejecutar mas de un comando, basta con que el proceso sea un shell-script )
 
 
-### B.- Interpretes de mandatos: 'shells'
+#### B.- Interpretes de mandatos: 'shells'
 
-#### B.1.- 'Shells' más sencillos
+##### B.1.- 'Shells' más sencillos
 
 |  DOS         |  UNIX                            |  VMS     | CMS/CP             |
 |--------------|----------------------------------|----------|--------------------|
@@ -229,7 +233,7 @@ Filesystem usage quota limit timeleft  files quota limit timeleft
      * Interprete de comandos al cual indicar los comandos que queramos ejecutar.
 
 
-#### B.2.- Cómo personalizar el 'shell'
+##### B.2.- Personalizar el 'shell'
 
 |  DOS   |  UNIX     |  VMS       | CMS/CP   |
 |--------|-----------|------------|----------|
@@ -260,7 +264,7 @@ guernika> chsh
         which you want? _4
 ```
 
-##### B.2.1- VARIABLES DE ENTORNO
+###### B.2.1- VARIABLES DE ENTORNO
 
 |  DOS         |  UNIX                        | VMS | CMS/CP |
 |--------------|------------------------------|-----|--------|
@@ -290,7 +294,7 @@ guernika> chsh
      setenv uname
 
 
-##### B.2.2- FICHEROS DE CONFIGURACIÓN
+###### B.2.2- FICHEROS DE CONFIGURACIÓN
 
 |  DOS          |  UNIX            |  VMS       | CMS/CP       |
 |---------------|------------------|------------|--------------|
@@ -304,9 +308,9 @@ no tener que teclearlas cada vez que arranquemos la cuenta.
 *  .profile (ksh)
 
 
-## 3.- Sistema de ficheros
+### 3.- Sistema de ficheros
 
-### A.- Navegando en los directorios
+#### A.- Navegando en los directorios
 
 |    |  DOS          |  UNIX            |  VMS          | CMS/CP                 | |
 |----|---------------|------------------|---------------|------------------------|-|
@@ -408,7 +412,7 @@ no tener que teclearlas cada vez que arranquemos la cuenta.
         * pushd &lt;d&gt; ---> inserta un nuevo dir en cima de pila.
 
 
-### B.-Analizando Ficheros
+#### B.-Analizando Ficheros
 
   |  DOS    |  UNIX     |  VMS          | CMS/CP       |
   |---------|-----------|---------------|--------------|
@@ -474,7 +478,7 @@ no tener que teclearlas cada vez que arranquemos la cuenta.
      * Ordena items de un fichero.
 
 
-### C.- Busqueda de/en Ficheros
+#### C.- Busqueda de/en Ficheros
 
 |  DOS   |  UNIX                   |  VMS     | CMS/CP     |
 |--------|-------------------------|----------|------------|
@@ -505,7 +509,7 @@ no tener que teclearlas cada vez que arranquemos la cuenta.
      * Igual que el `find' pero busca SOLO en los directorios especificados en la variable PATH.
 
 
-### D.- Facilidades en accesos a Ficheros
+#### D.- Facilidades en accesos a Ficheros
 
 1.- CAMINOS DE BUSQUEDA (PATH)  
 
@@ -551,7 +555,7 @@ no tener que teclearlas cada vez que arranquemos la cuenta.
  * Los permisos de uso del fichero <destino> no son los que tenga él, sino los que tenga el fichero referenciado (<origen>).
  * Si tenemos un enlace a un fichero de otro usuario/a, si dicho usuario/a lo borra solo borrará su enlace y no el propio fichero, con lo que queda a nuestra disposición pero ocupando espacio suyo!.
 
-### E.- Modificando el Sistema de Fichero
+#### E.- Modificando el Sistema de Fichero
 
   |  DOS         |  UNIX     |  VMS              | CMS/CP       |
   |--------------|-----------|-------------------|--------------|
@@ -675,9 +679,9 @@ no tener que teclearlas cada vez que arranquemos la cuenta.
       * Convierte las tabulaciones del fichero '&lt;fichero&gt;' en '&lt;número&gt;' espacios en blanco.
 
 
-### F.- Atributos
+#### F.- Atributos
 
-#### F.1.- Como interpretar los flags
+##### F.1.- Como interpretar los flags
 
 <html>
 <pre>
@@ -703,7 +707,7 @@ no tener que teclearlas cada vez que arranquemos la cuenta.
 *   El permiso x en directorios no significa permiso de ejecución sino permiso de acceder al directorio.
 
 
-#### F.2.-Uso atributos
+##### F.2.-Uso atributos
 
   |  DOS   |  UNIX     |  VMS                 | CMS/CP          |
   |--------|-----------|----------------------|-----------------|
@@ -732,12 +736,11 @@ no tener que teclearlas cada vez que arranquemos la cuenta.
       Ojo, la máscara son los permisos que se anularán por defecto (umask 077, pondra por defecto 700 al fichero)
 
 
-# 4.- Manejo de Dispositivos
-    
+## 4.- Manejo de Dispositivos
 
-### A.- Discos
+#### A.- Discos
 
-#### A.1.- Acceso a disco
+##### A.1.- Acceso a disco
 
    |  DOS      |  UNIX   |  VMS           | CMS/CP       |
    |-----------|---------|----------------|--------------|
@@ -761,7 +764,7 @@ no tener que teclearlas cada vez que arranquemos la cuenta.
       * NOTA: NO SE DEBE RETIRAR UN DISPOSITIVO FÍSICO SI ANTES NO SE DESMONTÓ.
 
 
-#### A.2.-Manejo de discos
+##### A.2.-Manejo de discos
 
    |  DOS           |  UNIX                     |  VMS                | CMS/CP   |
    |----------------|---------------------------|---------------------|----------|
@@ -780,7 +783,7 @@ Por ejemplo:
     * Antes del "cat ...", se saca el disco origen y se inserta el destino.
 
 
-### B.- Impresión
+#### B.- Impresión
 
    |  DOS      |  UNIX   |  VMS             | CMS/CP       |
    |-----------|---------|------------------|--------------|
@@ -800,7 +803,7 @@ Por ejemplo:
         &lt;identificador&gt; es el numero asociado al fichero que aparece en el listado de 'lpq'
 
 
-### C.- Terminales
+#### C.- Terminales
 
   |  DOS           |  UNIX             |  VMS        | CMS/CP    |
   |----------------|-------------------|-------------|-----------|
@@ -824,5 +827,3 @@ Por ejemplo:
    Control-L
      * Borra la pantalla y situa el cursor en la esquina superior izquierda.
          
-----------
-
