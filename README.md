@@ -52,9 +52,14 @@
 
 ## Breve resumen
 
+
+
+
+# Introducción a Unix/Linux
+
 ## 1.- Comenzando
     
-### A.-Entrar y Salir de la Cuenta
+### A.- Entrar y Salir de la Cuenta
 
 |  DOS   |  UNIX     |  VMS         | CMS/CP       |
 |--------|-----------|--------------|--------------|
@@ -64,30 +69,29 @@
 
 
 * login
-    * Comandos que nos permiten entrar en nuestra cuenta
+    * Mandato que nos permiten entrar en nuestra cuenta.
 *  passwd
-    * Permite cambiar la contraseña de entrada
-    * El programa te pedira tu antigua clave (comprueba que eres tú) y también te pedirá la nueva 2 veces. Si te confundes, presiona la tecla control y la letra 'c' a la vez, y vuelve a ejecutar.
+    * Permite cambiar la contraseña de entrada.
+    * El programa te pedirá tu antigua clave (comprueba que eres tú) y también te pedirá la nueva 2 veces (ayuda a evitar poner una contraseña con un carácter mal).
+       Si te confundes, presiona Ctrl-C (la tecla control y la letra 'c' a la vez) y vuelve a ejecutar.
 ```bash
-    [passwd]
-    >          Batman:a999999# passwd
-    >          Changing password for a999999
-    >          Enter old password:
-    >          Enter new password:
-    >          Re-type new password:
-    >          Password changed.
+     guernika# passwd
+     Changing password for u55555
+     Enter old password:
+     Enter new password:
+     Re-type new password:
+     Password changed.
    ```
 
-* exit
-   * logout
+* exit | logout
    * Permite salir de la cuenta.
-   * Usando el comando 'exit', puede indicarte que no saldras de la cuenta por que queda tareas tareas pendientes.
-      Pon otra vez 'exit' y saldrás (en la mayoría de los Unix).
-   * Tambien se sale con Control-D, solo en algunos shells.
+   * Usando el comando 'exit' puede indicar que no se puede salir de la cuenta porque queda tareas pendientes.
+      Al poner otra vez 'exit' se fuerza a matar las tareas pendientes y salir (en la mayoría de los Unix).
+   * También se sale con Control-D, solo en algunos shells.
 
 
 
-### B.-Información de recursos disponibles
+### B.- Información de recursos disponibles
 
 |  DOS   |  UNIX     |  VMS         | CMS/CP       |
 |--------|-----------|--------------|--------------|
@@ -99,15 +103,14 @@
 
 
 * quota -v                        
-    * Lista la cantidad de recurso asignado a tí y la cantidad ocupado (tiempo, disco, ...)
+    * Lista la cantidad de recurso asignado a tí y la cantidad ocupado (tiempo, disco, etc.)
     * A partir del límite máximo no te deja guardar nada más, y tendrás el tiempo indicado por timeleft para quitar los (limit-quota) que sobran.
 
 ```bash
-[quota]
->          Batman:a999999# quota -v
->	   Disk quotas for a999999 (uid 999):
->	   Filesystem usage quota limit timeleft  files quota limit timeleft
->	   /u           683   950  1000              80    95   100
+guernika# quota -v
+Disk quotas for u55555(uid 555):
+Filesystem usage quota limit timeleft  files quota limit timeleft
+/u           683   950  1000              80    95   100
 ```
 
 * df
@@ -116,19 +119,19 @@
     * Lista el espacio que ocupa los fichero en el directorio actual y subdirectorios de este.
 
 
-### C.-Optener Ayuda
+### C.- Obtener ayuda
 
 |  DOS   |  UNIX     |  VMS         | CMS/CP       |
 |--------|-----------|--------------|--------------|
 | help   | man       |  help        | help         |
 
-* &lt;comando&gt; --h
+* &lt;mandato&gt; --h
     * Se reserva '--h' como opción para la ayuda.
-* man &lt;comando&gt;
+* man &lt;mandato&gt;
     * Presenta informa sobre el comando que se le indique (sintaxis, para que sirve y un montón de cosas más).
-    * Permite la opcion de usar parametros y manejar comandos internos:
+    * Permite la opción de usar parámetros y manejar comandos internos:
       - Al llamarlo...:
-        * man list                        ---> Lista los comandos de Unix por orden alfabetico de los que man tiene ayuda.
+        * man list                        ---> Lista los comandos de Unix por orden alfabético de los que man tiene ayuda.
         * man -a &lt;cmd&gt; ---> Presenta toda la información que tenga el mismo nombre que <cmd>.
                                                        Conforme se sale de la primera ayuda, se entra en la siguiente relacionada.
         * man -k &lt;cmd&gt; ---> Lista toda los comandos relacionados con <cmd> pero no presenta la ayuda de cada uno,
@@ -142,7 +145,7 @@
 ## 2.- Ejecución de comandos
     
 
-### A.-Gestión de procesos
+### A.- Gestión de procesos
 
 |  DOS   |  UNIX     |  VMS                | CMS/CP       |
 |--------|-----------|---------------------|--------------|
@@ -163,9 +166,9 @@
         Si no está, habrá que poner el nombre completo del programa : /path/nombre_prog
 
 * ps
-     * Muestra la lista de procesos con su corespondiente número asociado llamado PID ( Process IDentification )
+     * Muestra la lista de procesos con su correspondiente número asociado llamado PID ( Process IDentification )
 
-*  kill -9 &lt;numero&gt;
+*  kill -9 &lt;número&gt;
       * Mata un proceso de la lista de procesos identificado por su número asociado (PID)
       * Kill sirve para mandar señales a los procesos.            
         La señal 9, es la de matar. 
@@ -173,7 +176,7 @@
         HUP INT QUIT ILL TRAP IOT FPE KILL USR1 SEGV  USR2 PIPE ALRM TERM CHLD CONT STOP, etc. 
 
 *  Ctrl-z
-      * Entiendase, dar a Ctrl y z simultaneamente.
+      * Entiéndase, dar a Ctrl y la tecla de la letra 'z' simultáneamente.
       * Para un proceso (no lo mata, lo deja 'congelado')
 
 * jobs
@@ -214,9 +217,9 @@
         ( para ejecutar mas de un comando, basta con que el proceso sea un shell-script )
 
 
-### B.-Interpretes de mandatos: 'shells'
+### B.- Interpretes de mandatos: 'shells'
 
-#### B.1.-'Shells' más sencillos
+#### B.1.- 'Shells' más sencillos
 
 |  DOS         |  UNIX                            |  VMS     | CMS/CP             |
 |--------------|----------------------------------|----------|--------------------|
@@ -228,10 +231,10 @@
      * Mightnight Commandant, clónico de comandante norton para Unix.
 
 *  { ash,bash,csh,ksh,msh,sh,tcsh,tsh,zsh,...  } 
-     * Interprete de comandos al cúal indicar los comandos que queramos ejecutar.
+     * Interprete de comandos al cual indicar los comandos que queramos ejecutar.
 
 
-#### B.2.-Cómo personalizar el 'shell'
+#### B.2.- Cómo personalizar el 'shell'
 
 |  DOS   |  UNIX     |  VMS       | CMS/CP   |
 |--------|-----------|------------|----------|
@@ -241,29 +244,28 @@
 *  chsh
       * Cambia el shell definido en el fichero password que es el que se ejecuta al entrar en tu cuenta
       * Se aconseja el tcsh, pues tiene muchas utilidades:
-         - se puede sacar los comandos metidos anteriormente, como si tuvieras en DOS el DosKey instalado
-         - si escribes parte del nombre de un fichero (o directorio) y das a tabulador, completa el nombre
-         - si pones 'set correct=all', cada vez que el crea que te equivocas,
+         - Se puede sacar los comandos metidos anteriormente, como si tuvieras en DOS el DosKey instalado.
+         - Si escribes parte del nombre de un fichero (o directorio) y das a tabulador, completa el nombre.
+         - Si pones 'set correct=all', cada vez que el crea que te equivocas,
            te presenta el comando mas parecido y pide confirmación para ejecutarlo.
-         - etc.
-      * En algunos sistemas, solo lo puede hacer el root.
+         - Etc.
+      * En algunos sistemas, solo lo puede hacer el usuario root.
 
 ```bash
-[chsh]
->        chsh /bin/tcsh
+guernika>  chsh /bin/tcsh
 ```
    o bien
    
 ```bash
->        chsh
->        (1) /bin/sh
->        (2) /bin/csh
->        (3) /bin/bash
->        (4) /bin/tcsh
->        which you want? _4
+guernika> chsh
+        (1) /bin/sh
+        (2) /bin/csh
+        (3) /bin/bash
+        (4) /bin/tcsh
+        which you want? _4
 ```
 
-##### B.2.1-VARIABLES DE ENTORNO
+##### B.2.1- VARIABLES DE ENTORNO
 
 |  DOS         |  UNIX                        | VMS | CMS/CP |
 |--------------|------------------------------|-----|--------|
@@ -274,23 +276,26 @@
 
    Una variable de entorno es una cadena de caracteres que hace referencia a otra cadena.
    Ejemplo, "saludo=hola", saludo es la variable de entorno que usaremos para referirnos a hola.
-   Veamos su manejo con ejemplos de referencia.
 
-* set &lt;&lt;HOMY&gt;&gt;=&lt;&lt;/u/my&gt;&gt;
-          setenv &lt;&lt;uik&gt;&gt; &lt;&lt;a990&gt;&gt;
-	  * Como se definen las variables de entorno ...
-* set
-  setenv
-     * ... como se ver las variables de entorno y su equivalencia ...
-* cd   $&lt;&lt;HOMY&gt;&gt;
-   echo $&lt;&lt;uik&gt;&gt;   
-	 * ... y como se referencian ...
-* set &lt;&lt;HOMY&gt;&gt;=
-   setenv &lt;&lt;uik&gt;&gt;
-	* ... y como se borran!.
+   Veamos su manejo con ejemplos de referencia:
+* Cómo se definen las variables de entorno:
+  * set HOME=/home/u55555
+          setenv uname u55555
+* Cómo se ver las variables de entorno y su equivalencia:
+  * set
+     setenv
+     env
+
+* Cómo se usa el valor almacenado en la variable (cómo se referencian):
+  * cd   $HOME
+    echo $uname
+
+* Cómo se borran las variables de entorno: 
+  * set HOME=
+     setenv uname
 
 
-##### B.2.2-FICHEROS DE CONFIGURACIóN
+##### B.2.2- FICHEROS DE CONFIGURACIÓN
 
 |  DOS          |  UNIX            |  VMS       | CMS/CP       |
 |---------------|------------------|------------|--------------|
@@ -306,7 +311,7 @@ no tener que teclearlas cada vez que arranquemos la cuenta.
 
 ## 3.- Sistema de ficheros
 
-### A.-Navegando en los directorios
+### A.- Navegando en los directorios
 
 |    |  DOS          |  UNIX            |  VMS          | CMS/CP                 | |
 |----|---------------|------------------|---------------|------------------------|-|
@@ -327,7 +332,7 @@ no tener que teclearlas cada vez que arranquemos la cuenta.
 
 
 * ls &lt;directorio&gt;
-   * ls -lasF ---> informacion completa
+   * ls -lasF ---> información completa
    * ls -i       ---> pares inodo-fichero
    * ls -R      ---> listado recursivo
 
@@ -337,7 +342,7 @@ no tener que teclearlas cada vez que arranquemos la cuenta.
         ls -R                           &lt;dir&gt;
         find . -print -name   &lt;dir&gt;
         du -a                         &lt;dir&gt;
-      * Particularidades: en AIX (El unix de IBM) existe tambien 'li' y 'di' 
+      * Particularidades: en AIX (El Unix de IBM) existe también 'li' y 'di' 
 
 <html>
 <pre>
@@ -382,7 +387,7 @@ no tener que teclearlas cada vez que arranquemos la cuenta.
    *  cd ..   ---> ir al anterior
 
      * Cambia de directorio.
-        Realmente, cambia el contenido de una variable del sistema operativo en la cúal guarda el directorio de trabajo, 
+        Realmente, cambia el contenido de una variable del sistema operativo en la cual guarda el directorio de trabajo, 
         que es aquel que el sistema usara cuando lo omitamos.
       * Hay ciertos detalles a recordar:
         - La \ de dos es la / en Unix:                               
@@ -400,7 +405,7 @@ no tener que teclearlas cada vez que arranquemos la cuenta.
 
 * pushd/popd <directorio>
      * Se crea una pila, en la que se almacena el nombre de los directorios que nosotros queramos, 
-        y se permite facilmente cambiar a uno de los directorios de la pila
+        y se permite fácilmente cambiar a uno de los directorios de la pila
         * popd          ---> cuando se ejecute, nos cambiaremos al
                                      directorio situado en cabeza de pila y este desaparece de la cima.
         * pushd        ---> lista todos los componentes de la pila.
@@ -474,7 +479,7 @@ no tener que teclearlas cada vez que arranquemos la cuenta.
      * Ordena items de un fichero.
 
 
-### C.-Busqueda de/en Ficheros
+### C.- Busqueda de/en Ficheros
 
 |  DOS   |  UNIX                   |  VMS     | CMS/CP     |
 |--------|-------------------------|----------|------------|
@@ -505,12 +510,53 @@ no tener que teclearlas cada vez que arranquemos la cuenta.
      * Igual que el `find' pero busca SOLO en los directorios especificados en la variable PATH.
 
 
-### D.-Facilidades en accesos a Ficheros
+### D.- Facilidades en accesos a Ficheros
 
 1.- CAMINOS DE BUSQUEDA (PATH)  
-2.- 'LINKS'  
 
-### E.-Modificando el Sistema de Fichero
+- En general, es algo asi:
+```bash
+   PATH=/bin;/usr/bin;~/bin
+```
+
+- Se suele usar una variable de entorno especial que contiene una lista de directorios donde buscar dónde está un fichero ejecutable cuando solo le damos al interprete de comandos el nombre del fichero binario.
+- En Unix no se busca en el directorio actual por defecto, en DOS si (primero en la búsqueda).
+
+
+2.- 'LINKS'  o enlaces
+
+ * Un link es una referencia a otro fichero. Si tienes un fichero en un lugar lejano, podrás crearte un fichero en tu cuenta
+     que sera una referencia a ese lejano.
+* ¿Qué ventaja tiene con respecto a que te lo copies a tu cuenta? ---> al copiartelo hay 2 copias (obvio) en cambio un link solo hay una, y el link es solo una referencia con lo que no "gasta" cuota, ahorrando espacio en disco.
+
+* La sintáxis es:
+```bash
+# ln [-s] <origen> <nombre>
+```
+   * Permite referenciar un fichero que esta presente físicamente en otro lugar (&lt;origen&gt;) como si estuviera en el lugar donde esta la referencia (&lt;nombre&gt;).
+
+* Existen dos tipos de enlazado:
+	 - El físico o 'duro':
+	   * Crea un nodo-i (nueva entrada de directorio) de que apunta al mismo fichero. 
+       * Ahora para borrar el fichero, será necesario borrar los dos nombres que lo referencian.
+	- El simbólico o 'blando':
+	   * Se consigue con la opcion -s. 
+	   * El fichero resultante es de tipo 'l', de modo que viene a ser como una "macro" que el sistema operativo sustituye en el comando que tecleemos con ese nombre. 
+	   * Por ejemplo:
+     ```bash
+     lrwxrwxrwx 0 a900000 users 12-1-95 13:30  pek -> /usr/bin/mycmd
+     ```
+   * cuando tecleemos 'cat pek' el sistema operativo ejecutará 'cat /usr/bin/mycmd' con los permisos de /usr/bin/mycmd.
+     Si no tenemos derechos sobre ese fichero, no se visualizará el contenido.
+     Pero si nuestro comando solo afecta al enlace (entrada de directorio) y no al propio fichero (como la orden de borrar o mover el fichero) tenemos todos los derechos, pero solo sobre la entrada del enlace en sí misma.
+
+**NOTA**:
+ * Los enlaces normales solo pueden hacerse si el enlace a crear está en el mismo dispositivo físico (disco...) que el fichero.
+    Si no ocurre así, solo podremos hacer enlaces simbólicos.
+ * Los permisos de uso del fichero <destino> no son los que tenga él, sino los que tenga el fichero referenciado (<origen>).
+ * Si tenemos un enlace a un fichero de otro usuario/a, si dicho usuario/a lo borra solo borrará su enlace y no el propio fichero, con lo que queda a nuestra disposición pero ocupando espacio suyo!.
+
+### E.- Modificando el Sistema de Fichero
 
   |  DOS         |  UNIX     |  VMS              | CMS/CP       |
   |--------------|-----------|-------------------|--------------|
@@ -544,9 +590,99 @@ no tener que teclearlas cada vez que arranquemos la cuenta.
   | .       | expand    | .             | .            |
     
 
-### F.-Atributos
+* mkdir &lt;directorio&gt;
+     * Crea un directorio nuevo, hijo del actual, llamado &lt;directorio&gt;.
 
-#### F.1.-Como interpretar los flags
+* mkdirhier <d1/d2...>
+     * Crea varios directorios, al mismo tiempo.
+     * Creará el directorio d1 y luego el subdirectorio d2 y así sucesivamente.
+
+* rmdir &lt;directorio&gt;
+     * Borra el directorio &lt;directorio&gt;.
+     * &lt;directorio&gt; puede ser el path concatenado con el nombre del directorio a borrar.
+
+ ```bash
+ guernika$  rmdir /u/primero/u55555/test1
+ ```
+
+* mknod &lt;path&gt; &lt;tipo&gt; &lt;princ&gt; &lt;sec&gt;
+     * Crea ficheros especiales ( como los del directorio /dev )
+     * Donde:
+       * &lt;tipo&gt; puede ser:
+          * c ( asociado a dispositivo caracter (term))
+          * b (     "    "       "     bloque (discos))
+       * &lt;princ&gt; es el número de dispositivo hardware (0,1,2...)
+       * &lt;sec&gt; es el número de dispositivo secundario asociado a <princ&gt;
+
+        Por ejemplo:
+          En Minix y otros sistemas similares en PCs, el diskette lleva el número &lt;princ> igual a 2.
+          El segundo número &lt;sec> indica, para el caso del diskette, el tipo de formato (doble densidad, etc) y la unidad.
+          Por ejemplo, los discos 3 1/2 HD se codifican con un 28 para la primera unidad de diskette y 29 para la segunda.
+          Los 3 1/2 DD llevan los codigos respectivos 16 y 17.
+
+* rm &lt;fichero>
+     * Borra el fichero &lt;fichero> ;
+        Igual que al borrar directorios, &lt;fichero> puede ser el path y nombre del fichero.
+      * Notas :
+         - Si no te deja borrar el s.o. , es que según las protecciones, no estás autorizado. Cámbialas y luego intentalo de nuevo	   (ver sección protecciones)
+         - De momento, solo en el caso de DOS, es posible "desborrarlo" y recuperarlo con el comando undelete.
+         - En Unix se suele simular moviendo el fichero al directorio /tmp. 
+           Si se quiere recuperar, se mueve desde /tmp hasta donde estubiera.
+           Periodicamente el sysop (responsable del sistema) borra todos los ficheros del /tmp, con lo que son "desborrables" por un periodo de tiempo.
+     * Particularidades de algunos Unix:
+         * Funciona 'del' o 'erase' también
+
+*  cp &lt;fichero>
+      * Copia un fichero: crea otro fichero que tendra el mismo contenido que el original.
+      * Notas:
+         - Normalmente no se permite que el fichero destino tenga el mismo nombre que el origen.
+
+* cat -o &lt;a> &lt;b> > &lt;a>
+     * Concatena el fichero &lt;b> al final del &lt;a&gt;.
+
+* mv &lt;nombre_fichero&gt; &lt;nuevo_nombre&gt;
+     * Cambia de nombre un fichero o un directorio.
+
+* mv &lt;ubicación&gt; &lt;nueva_ubicación&gt;
+     * Cambia la ubicación de un fichero: lo traslada a otro directorio borrándolo de su posición original.
+   * Nota:
+        - En los sistemas que no lo implementa se puede simular con la secuencia "rename+delete" o "copy+delete".
+   * Ejemplo:
+ ```bash
+ C:\> move c:\practica\memoria.txt a:\memoria.txt
+ ```
+
+* touch -t MMDDhhmm &lt;fichero&gt;
+     * Cambia SOLO la fecha de un fichero (la fecha de última modificación del fichero).
+        MMDDhhmm es el mes-día-hora-minuto en números y juntos.
+
+* cat > &lt;fichero&gt;
+   cat >> &lt;fichero&gt; ---> apendiza.
+     * Edita linea a linea (sin retroceso) un fichero;
+        Para terminar, teclear el final de fichero (EOF) con 'Ctrl-D'.
+
+* { vi | vedit } &lt;fichero&gt;
+     * Edita un fichero (permite cambiar el contenido de un fichero, normalmente de texto).
+      * La eleccion del editor depende de muchas cosas, y es algo personal. Los más conocidos son:
+              vi            ---> texto simple                                  
+              LaText    ---> a lo WordPerfect/WordStar                     
+              EMACS  ---> Trabajo con Lisp/C
+
+* fmt -with &lt;ancho&gt;
+      * Ajusta el ancho de un texto a la profundidad indicada (&lt;ancho&gt;), conservando las palabras (es decir, no las corta, si no que las pasa a la línea siguiente )
+      * Es por tanto un formateador de texto.
+
+* split -b &lt;bytes&gt; &lt;infile&gt;
+     * Crea los ficheros que necesite, resultado de partir el fichero de entrada <infile&gt; en ficheros
+        de &lt;bytes&gt; bytes de tamaño.
+
+* expand -t&lt;numero&gt; &lt;fichero&gt;
+      * Convierte las tabulaciones del fichero '&lt;fichero&gt;' en '&lt;número&gt;' espacios en blanco.
+
+
+### F.- Atributos
+
+#### F.1.- Como interpretar los flags
 
 <html>
 <pre>
@@ -604,9 +740,9 @@ no tener que teclearlas cada vez que arranquemos la cuenta.
 # 4.- Manejo de Dispositivos
     
 
-### A.-Discos
+### A.- Discos
 
-#### A.1.-Acceso a disco
+#### A.1.- Acceso a disco
 
    |  DOS      |  UNIX   |  VMS           | CMS/CP       |
    |-----------|---------|----------------|--------------|
@@ -694,3 +830,4 @@ Por ejemplo:
      * Borra la pantalla y situa el cursor en la esquina superior izquierda.
          
 ----------
+
