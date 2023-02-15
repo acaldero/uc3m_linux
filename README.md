@@ -16,7 +16,7 @@
             </tr>
             <tr>
                 <td class="align-middle">
-                    <b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w0-ubuntu-instalacion.pdf"><u>Instalación de Ubuntu en VirtualBox</u></a><u></u></b>
+                    <b><a href="https://acaldero.github.io/uc3m_linux/slides/clase_w0-ubuntu-instalacion.pdf"><u>Instalación de Ubuntu en VirtualBox</u></a><u></u></b>
                 </td>
                 <td class="align-middle">
                     <ol>
@@ -27,7 +27,7 @@
             </tr>
             <tr>
                 <td class="align-middle">
-                    <b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w0-ubuntu-fichydirs.pdf"><u>Uso de ficheros y directorios en Linux</u> </a></b>
+                    <b><a href="https://acaldero.github.io/uc3m_linux/slides/clase_w0-ubuntu-fichydirs.pdf"><u>Uso de ficheros y directorios en Linux</u> </a></b>
                 </td>
                 <td class="align-middle">
                     <ol>
@@ -38,7 +38,7 @@
             </tr>
             <tr>
                 <td class="align-middle">
-                    <b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w0-ubuntu-procesos.pdf"><u>Uso de procesos en Linux</u> </a></b>
+                    <b><a href="https://acaldero.github.io/uc3m_linux/slides/clase_w0-ubuntu-procesos.pdf"><u>Uso de procesos en Linux</u> </a></b>
                 </td>
                 <td class="align-middle">
                     <ol>
@@ -54,7 +54,7 @@
 
 * Enlaces adicionales:
   * [Jaime Pons |- AprendoLinux](https://www.youtube.com/channel/UCaA0nwerdKCGE7F_doNWdGg)
-  * [www.aprendolinux.com](www.aprendolinux.com)
+  * [www.aprendolinux.com](https://www.aprendolinux.com)
 
 
 ## Introducción a Unix/Linux
