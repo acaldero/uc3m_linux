@@ -53,7 +53,8 @@
 </html>
 
 * Enlaces adicionales:
-  * [Jaime Pons |- AprendoLinux](https://www.youtube.com/channel/UCaA0nwerdKCGE7F_doNWdGg)
+  * [Guía de instalación de Linux del GUL](https://github.com/guluc3m/linux404)
+  * [Jaime Pons | AprendoLinux](https://www.youtube.com/channel/UCaA0nwerdKCGE7F_doNWdGg)
   * [www.aprendolinux.com](https://www.aprendolinux.com)
 
 
