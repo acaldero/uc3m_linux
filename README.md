@@ -160,6 +160,7 @@ Filesystem usage quota limit timeleft  files quota limit timeleft
 | .      | &         | spawn               | .            |
 | .      | nohup     | submit              | disconnect   |
 | .      | at        | submit/after        | cmsbatch     |
+| .      | watch     | .                   | .            |
 
 *  &lt;programa&gt;
      * Para ejecutar un programa, solo hay que poner el nombre y dar enter.
@@ -215,6 +216,10 @@ Filesystem usage quota limit timeleft  files quota limit timeleft
 * at &lt;hora&gt; &lt;proceso&gt;
      * Para ejecutar un proceso(s) a la hora y día que se quiera!.
         ( para ejecutar mas de un comando, basta con que el proceso sea un shell-script )
+
+* watch &lt;programa&gt;
+     * Ejecuta el programa especificado cada 2 segundos y muestra la salida
+     * Usa -n &lt;segundos&gt; para especificar el intervalo de tiempo
 
 
 #### B.- Interpretes de mandatos: 'shells'
