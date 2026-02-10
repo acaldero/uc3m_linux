@@ -161,6 +161,7 @@ Filesystem usage quota limit timeleft  files quota limit timeleft
 | .      | nohup     | submit              | disconnect   |
 | .      | at        | submit/after        | cmsbatch     |
 | .      | watch     | .                   | .            |
+| .      | tee       | .                   | .            |
 
 *  &lt;programa&gt;
      * Para ejecutar un programa, solo hay que poner el nombre y dar enter.
@@ -220,6 +221,9 @@ Filesystem usage quota limit timeleft  files quota limit timeleft
 * watch &lt;programa&gt;
      * Ejecuta el programa especificado cada 2 segundos y muestra la salida
      * Usa -n &lt;segundos&gt; para especificar el intervalo de tiempo
+
+* &lt;programa&gt; | tee &lt;archivo&gt;
+     * Ejecuta el programa especificado y copia la salida estándar al archivo especificado (manteniendo la salida estandar original, e.g. la TTY)
 
 
 #### B.- Interpretes de mandatos: 'shells'
