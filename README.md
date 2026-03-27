@@ -162,6 +162,7 @@ Filesystem usage quota limit timeleft  files quota limit timeleft
 | .      | at        | submit/after        | cmsbatch     |
 | .      | watch     | .                   | .            |
 | .      | tee       | .                   | .            |
+| .      | disown    | .                   | .            |
 
 *  &lt;programa&gt;
      * Para ejecutar un programa, solo hay que poner el nombre y dar enter.
@@ -222,8 +223,15 @@ Filesystem usage quota limit timeleft  files quota limit timeleft
      * Ejecuta el programa especificado cada 2 segundos y muestra la salida
      * Usa -n &lt;segundos&gt; para especificar el intervalo de tiempo
 
-* &lt;programa&gt; | tee &lt;archivo&gt;
-     * Ejecuta el programa especificado y copia la salida estándar al archivo especificado (manteniendo la salida estandar original, e.g. la TTY)
+* &lt;programa&gt; |& tee &lt;archivo&gt;
+     * Ejecuta el programa especificado y copia la salida estándar y de error al archivo especificado (manteniendo la salida estandar original, e.g. la TTY)
+
+* disown
+     * Desacopla los procesos de la shell actual, por lo que siguen ejecutándose aunque salgas (similar a nohup).
+     * Workflow típico para hacer que el programa actual siga ejecutando aún cerrando sesión (si te olvidaste de usar nohup):
+       1. Ctrl + z
+       2. bg
+       3. disown 
 
 
 #### B.- Interpretes de mandatos: 'shells'
