@@ -191,6 +191,9 @@ Filesystem usage quota limit timeleft  files quota limit timeleft
 
 * fg <orden>
     * Hace que un programa en espera se ejecute en foreground, por pantalla.
+    * Truco para hacer que un comando se ejecute en cuanto termine el actual
+       1. Ctrl + z
+       2. fg; &lt;comando&gt; (también se puede usar && o || en vez de ;)
 
 * %&lt;orden&gt;
      * Vuelve al proceso que previamente se había parado ( totalmente equivalente al anterior )
