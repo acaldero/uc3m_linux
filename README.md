@@ -54,7 +54,7 @@
 
 * Enlaces adicionales:
   * [www.aprendolinux.com](https://www.aprendolinux.com)
-  * [Guía de instalación de Linux del GUL](https://github.com/guluc3m/linux-install)
+  * [Guía de instalación de Linux del GUL](https://gul.uc3m.es/guia/)
   * [Jaime Pons | AprendoLinux](https://www.youtube.com/channel/UCaA0nwerdKCGE7F_doNWdGg)
 
 
